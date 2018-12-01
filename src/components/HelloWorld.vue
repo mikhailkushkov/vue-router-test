@@ -1,36 +1,44 @@
 <template>
   <div>
-    <div class="hello">
-      <h1>{{ greeting }}</h1>
-    </div>
-    <br>
-    <div>
-      <b-dropdown id="ddown1" text="Dropdown Button" class="m-md-2">
-        <b-dropdown-item>First Action</b-dropdown-item>
-        <b-dropdown-item>Second Action</b-dropdown-item>
-        <b-dropdown-item>Third Action</b-dropdown-item>
-        <b-dropdown-divider></b-dropdown-divider>
-        <b-dropdown-item>Something else here...</b-dropdown-item>
-        <b-dropdown-item disabled>Disabled action</b-dropdown-item>
-      </b-dropdown>
+    <div class="holder">
+      <ul>
+        <li v-for="user in users"></li>
+        <h2>{{ user.name }} {{ user.age }} {{ user.job }}</h2>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  data() {
+  name: 'UsersList',
+  data () {
     return {
-      greeting: 'Hello from Vue',
-    };
-  },
+      users: [
+        {
+          name: 'Mark Wahlberg',
+          age: 47,
+          job: 'Actor'
+        },
+        {
+          name: 'Michail kushkov',
+          age: 37,
+          job: 'Web-dev'
+        },
+        {
+          name: 'Junior Vasquez',
+          age: 54,
+          job: 'DJ'
+        }
+      ]
+    }
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-  .hello {
+  .holder {
     width: auto;
     box-sizing: border-box;
     h1 {
