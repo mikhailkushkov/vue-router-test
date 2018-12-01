@@ -3,8 +3,7 @@
     <div id="nav">
       <router-link to="/" class="link active">Home</router-link> |
       <router-link to="/about" class="link">About</router-link> |
-      <router-link to="/contact" class="link">Contact</router-link> |
-      <router-link to="/testLink" class="link">Test-Link</router-link>
+      <router-link to="/contact" class="link">Contact</router-link> 
     </div>
     <transition name="router-anim">
       <router-view/>
@@ -13,11 +12,11 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import UsersList from './components/UsersList.vue';
 
 export default {
   components: {
-    HelloWorld,
+    UsersList
   },
 };
 </script>
@@ -28,7 +27,8 @@ export default {
     font-family: Arial, Helvetica, sans-serif;
   }
   html, body {
-    height: calc(100% - 50px);
+    padding: 0;
+    margin: 0;
   }
   #app {
     background: #fff;
@@ -36,11 +36,11 @@ export default {
     padding: 30px;
     border-radius: 10px;
     margin: 50px auto 0 auto;
-    height: calc(60% - 50px);
+    height: auto;
+    display: block;
   }
   .page {
-    position: fixed;
-    width: calc(50% - 60px);
+    width: 100%;
   }
   .router-anim-enter-active {
     animation: coming 1s;
