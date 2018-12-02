@@ -1,22 +1,18 @@
 <template>
   <div class="home page">
     <h1>This is a home page</h1>
-    <UsersList v-bind:users="users"></UsersList>
+    <UsersList></UsersList>
   </div>
 </template>
 
 <script>
 import UsersList from '../components/UsersList.vue';
 export default {
-  props: [
-    'users'
-  ],
   components: {
     UsersList
   }
 };
 </script>
-
 
 <style scoped lang="less">
   .home {
