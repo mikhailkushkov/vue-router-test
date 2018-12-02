@@ -2,8 +2,12 @@
   <div>
     <div class="holder">
       <ul>
-        <li v-for="user in users"></li>
-        <h2>{{ user.name }} {{ user.age }} {{ user.job }}</h2>
+        <li 
+          v-for="(user, index) in users"
+          :key="index"
+        >
+          <h2>{{index}} {{ user.name }} {{ user.age }} {{ user.job }}</h2>
+        </li>
       </ul>
     </div>
   </div>
@@ -21,9 +25,9 @@ export default {
           job: 'Actor'
         },
         {
-          name: 'Michail kushkov',
+          name: 'Michael Jordan',
           age: 37,
-          job: 'Web-dev'
+          job: 'Athlet'
         },
         {
           name: 'Junior Vasquez',
@@ -45,6 +49,9 @@ export default {
       color: green;
       font-size: 2.5em;
       font-weight: bold;
+    }
+    h2 {
+      font-size: 16px;
     }
   }
 </style>
